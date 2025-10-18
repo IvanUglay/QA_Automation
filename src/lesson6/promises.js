@@ -20,4 +20,4 @@ function fetchData(url) {
     });
 }
 
-fetchData(JSON_URL);
+fetchData(JSON_URL).then();
