@@ -1,0 +1,12 @@
+node_modules/
+.vscode/
+.idea/
+build/
+interfaces.js
+device.js
+smartDevice.js
+smartLamp.js
+smartCamera.js
+smartThermostat.js
+utils.js
+main.js
