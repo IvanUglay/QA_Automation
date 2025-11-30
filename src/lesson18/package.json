@@ -1,0 +1,21 @@
+{
+  "name": "lesson18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "allure-playwright": "^3.4.2",
+    "eslint": "^9.39.1",
+    "prettier": "^3.7.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
