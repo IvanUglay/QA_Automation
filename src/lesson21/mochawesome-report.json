@@ -1,0 +1,7 @@
+{
+  "reportDir": "reports/html",
+  "reportFilename": "index",
+  "quiet": true,
+  "overwrite": true,
+  "jsonDir": "reports/cucumber"
+}
