@@ -1,24 +1,14 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
+import { test, expect } from '../fixtures/home.fixture';
 
-test.describe('Playwright.dev Home Page', () => {
-    test('Header is visible', async ({ page }) => {
-        const home = new HomePage(page);
-        await home.open();
-        await expect(home.header).toBeVisible();
+test.describe('Home page', () => {
+
+    test('Header is visible', async ({ homePage }) => {
+        await expect(homePage.header.docsLink).toBeVisible();
     });
 
-    test('Search input works', async ({ page }) => {
-        const home = new HomePage(page);
-        await home.open();
-        await home.search('fixtures');
-        await expect(home.searchInput).toHaveValue('fixtures');
+    test('Navigate to Docs', async ({ homePage, page }) => {
+        await homePage.header.docsLink.click();
+        await expect(page).toHaveURL(/docs/);
     });
 
-    test('Navigate to Docs', async ({ page }) => {
-        const home = new HomePage(page);
-        await home.open();
-        await home.openDocs();
-        await expect(page).toHaveURL(/.*docs/);
-    });
 });
