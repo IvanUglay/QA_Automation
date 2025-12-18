@@ -2,7 +2,9 @@ name: Playwright Tests
 
 on:
   push:
+    branches: [ main, master ]
   pull_request:
+    branches: [ main, master ]
 
 jobs:
   tests:
@@ -11,25 +13,26 @@ jobs:
 
     defaults:
       run:
-        working-directory: src/lesson19
+        # Робоча директорія з тестами
+        working-directory: QA_Automation/src/lesson19
 
     steps:
       # Клонування репозиторію
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Встановлення Node.js та кешування залежностей
+      # Встановлення Node.js та кешування npm
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # Встановлення залежностей через npm ci
+      # Встановлення залежностей
       - name: Install dependencies
         run: npm ci
 
-      # Встановлення Playwright браузерів
+      # Встановлення браузерів Playwright
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
@@ -37,7 +40,7 @@ jobs:
       - name: Run Playwright tests
         run: npm test
 
-      # Перевірка, що створилися результати
+      # Перевірка вмісту директорії після тестів (для дебагу)
       - name: List test output
         run: ls -R
 
@@ -51,4 +54,3 @@ jobs:
             playwright-report
             test-results
             reports
-
