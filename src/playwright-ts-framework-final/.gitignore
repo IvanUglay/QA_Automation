@@ -1,0 +1,6 @@
+
+node_modules
+html-report
+playwright-report
+dist
+.env*
