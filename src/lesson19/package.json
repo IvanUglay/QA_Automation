@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "playwright test",
-    "lint": "eslint . --ext .ts"
-  },
+  "test": "playwright test --reporter=html",
+  "lint": "eslint . --ext .ts"
+},
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@playwright/test": "^1.42.0",
