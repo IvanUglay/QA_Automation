@@ -11,8 +11,7 @@ jobs:
 
     defaults:
       run:
-        # Вказуємо робочу папку з твоїми тестами
-        working-directory: src/lesson19
+        working-directory: QA_Automation/src/lesson19
 
     steps:
       # Клонування репозиторію
@@ -38,6 +37,10 @@ jobs:
       - name: Run Playwright tests
         run: npm test
 
+      # Перевірка, що створилися результати
+      - name: List test output
+        run: ls -R
+
       # Завантаження артефактів тестів
       - name: Upload Playwright report
         if: always()
@@ -47,3 +50,5 @@ jobs:
           path: |
             playwright-report
             test-results
+            reports
+
