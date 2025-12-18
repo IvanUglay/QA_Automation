@@ -1,44 +1,33 @@
 name: Playwright Tests
 
+# Запускаємо workflow на будь-який пуш або pull request
 on:
   push:
-    paths:
-      - 'QA_Automation/src/lesson19/**'
   pull_request:
-    paths:
-      - 'QA_Automation/src/lesson19/**'
-      
+
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
 
-    timeout-minutes: 30
+    defaults:
+      run:
+        # Вказуємо робочу папку з твоїми тестами
+        working-directory: QA_Automation/src/lesson19
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      # Клонування репозиторію
+      - uses: actions/checkout@v3
 
+      # Встановлення Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: '18'
 
+      # Встановлення залежностей
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-
+      # Запуск Playwright тестів
       - name: Run Playwright tests
-        run: npm test
-
-      # ❗️Артефакти тільки у CI
-      - name: Upload Playwright report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: |
-            playwright-report
-            test-results
+        run: npx playwright test
