@@ -12,7 +12,7 @@ jobs:
     defaults:
       run:
         # Вказуємо робочу папку з твоїми тестами
-        working-directory: QA_Automation/src/lesson19
+        working-directory: src/lesson19
 
     steps:
       # Клонування репозиторію
