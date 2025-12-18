@@ -1,0 +1,66 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "example-page;open-example.com",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Open example.com",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 267847999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I open example page",
+            "match": {
+              "location": "src\\steps\\home.steps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3009979098
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I see example title",
+            "match": {
+              "location": "src\\steps\\home.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37329999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 52996399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "example-page",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Example page",
+    "tags": [],
+    "uri": "src\\features\\home.feature"
+  }
+]
