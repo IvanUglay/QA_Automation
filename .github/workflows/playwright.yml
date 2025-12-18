@@ -1,6 +1,5 @@
 name: Playwright Tests
 
-# Запускаємо workflow на будь-який пуш або pull request
 on:
   push:
   pull_request:
@@ -11,23 +10,21 @@ jobs:
 
     defaults:
       run:
-        # Вказуємо робочу папку з твоїми тестами
-        working-directory: src/lesson19
+        working-directory: src/lesson19  # скоригуй під свій шлях
 
     steps:
-      # Клонування репозиторію
       - uses: actions/checkout@v3
 
-      # Встановлення Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # Встановлення залежностей
       - name: Install dependencies
         run: npm install
 
-      # Запуск Playwright тестів
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Run Playwright tests
         run: npx playwright test
