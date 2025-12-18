@@ -13,38 +13,30 @@ jobs:
 
     defaults:
       run:
-        # Робоча директорія з тестами
-        working-directory: src/lesson19/tests/home.spec.ts
+        working-directory: src/lesson19
 
     steps:
-      # Клонування репозиторію
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Встановлення Node.js та кешування npm
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # Встановлення залежностей
       - name: Install dependencies
         run: npm ci
 
-      # Встановлення браузерів Playwright
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      # Запуск тестів
-      - name: Run Playwright tests
-        run: npm test
+      - name: Run Home test only
+        run: npx playwright test tests/home.spec.ts
 
-      # Перевірка вмісту директорії після тестів (для дебагу)
       - name: List test output
         run: ls -R
 
-      # Завантаження артефактів тестів
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
