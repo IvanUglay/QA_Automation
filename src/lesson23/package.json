@@ -1,0 +1,19 @@
+
+{
+  "name": "expense-tracker-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+  "eslint": "^8.56.0",
+  "@typescript-eslint/eslint-plugin": "^7.18.0",
+  "@typescript-eslint/parser": "^7.18.0",
+  "@playwright/test": "^1.43.0",
+  "typescript": "^5.4.0",
+  "@types/node": "^20.11.0"
+}
+}
