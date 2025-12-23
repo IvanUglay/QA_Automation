@@ -1,0 +1,20 @@
+
+{
+  "name": "playwright-ts-test-framework",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-playwright": "^1.6.2",
+    "typescript": "^5.3.3"
+  }
+}
