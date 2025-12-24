@@ -1,11 +1,11 @@
 import { test as base, expect, Page } from '@playwright/test';
 
 type Fixtures = {
-  appPage: Page;
+  expenseApp: Page;
 };
 
 export const test = base.extend<Fixtures>({
-  appPage: async ({ page }, use) => {
+  expenseApp: async ({ page }, use) => {
     await page.goto('/');
     await use(page);
   }
