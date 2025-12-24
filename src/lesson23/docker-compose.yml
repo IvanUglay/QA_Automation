@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  expense-tracker:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    ports:
+      - "3000:3000"
+
+  e2e:
+    build:
+      context: .
+      dockerfile: Dockerfile.e2e
+    depends_on:
+      - expense-tracker
+    environment:
+      BASE_URL: http://expense-tracker:3000
